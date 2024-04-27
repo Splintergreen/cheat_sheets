@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}{{ note.title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h3>{{ note.title }}</h3>
+    <div class="content-box">
+        {{ markdown_content|safe }}
+        <a href="{{ url_for('index') }}">Назад к списку шпаргалок</a>
+    </div>
+</div>
+{% endblock %}

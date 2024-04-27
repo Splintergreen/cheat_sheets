@@ -1,0 +1,7 @@
+Flask==3.0.3
+flask-paginate==2024.4.12
+Flask-SQLAlchemy==3.1.1
+markdown2==2.4.13
+psycopg2-binary==2.9.9
+python-dotenv==1.0.0
+SQLAlchemy==2.0.29

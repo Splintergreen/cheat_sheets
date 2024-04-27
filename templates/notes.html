@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block title %}IT-Шпаргалки{% endblock %}
+
+{% block body %}
+    <form action="/search" method="get">
+        <div class="container">
+            <input type="text" required name="query" placeholder="Введите запрос">
+            <input type="submit" value="Искать">
+        </div>
+    </form>
+    
+    <h1>IT-Шпаргалки</h1>
+    
+    <form action="/add" method="post">
+        <div class="container">
+            <input type="text" required name="title" placeholder="Название шпаргалки">
+            <textarea required name="content" placeholder="Текст шпаргалки"></textarea>
+            <input type="submit" value="Добавить">
+            <ul>
+              {% for note in notes %}
+              <li><a href="{{ url_for('note_detail', note_id=note.id) }}">{{ note.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+    </form>
+    {{ pagination.links }}
+{% endblock %}

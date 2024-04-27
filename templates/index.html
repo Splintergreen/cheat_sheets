@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock title%}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        input[type="text"], textarea, button, input[type="submit"] {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px; /* Добавляем небольшой отступ снизу для каждого элемента */
+        }
+        
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+        h1, h3, ul {
+            text-align: center; /* Выравнивание по центру */
+            width: 100%; /* Занимает всю ширину родителя */
+        }
+        ul {
+            list-style-type: none; /*Убираем маркеры списка */
+            padding: 0;
+            /* text-align: left; */
+        }
+        
+        ul li {
+            margin-bottom: 10px; /* Добавляем небольшой отступ между элементами списка */
+        }
+        
+        ul li a {
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            color: #007bff; /* Задаем цвет ссылкам, чтобы они выглядели как в Bootstrap */
+        }
+        .pagination {
+            display: flex;
+            justify-content: center; /* Выравнивание по центру */
+        }
+        .content-box {
+            border: 1px solid #6d3535;
+            margin: 30px;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
