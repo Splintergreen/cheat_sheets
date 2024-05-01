@@ -65,16 +65,5 @@ def add_note():
         return redirect(url_for('index'))
 
 
-# @app.route('/edit/<int:note_id>', methods=['GET', 'POST'])
-# def edit_note(note_id):
-#     note = Note.query.get_or_404(note_id)
-#     if request.method == 'POST':
-#         note.title = request.form['title']
-#         note.content = request.form['content']
-#         db.session.commit()
-#         return redirect(url_for('index'))
-#     return render_template('edit_note.html', note=note)
-
-
 if __name__ == '__main__':
     app.run(debug=True)
