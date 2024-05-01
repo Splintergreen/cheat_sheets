@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block title %}Редактирование: {{ note.title }}{% endblock %}
+{% block body %}
+<style>
+        textarea {
+            resize: none;
+            height: 700px;
+        }
+</style>
+    <form  method="post">
+        <div class="container">
+            <input type="text" required id="title" name="title" value="{{ note.title }}">
+            <textarea required id="content" name="content">{{ note.content }}></textarea>
+            <input type="submit" value="Сохранить">
+            <a href="{{ url_for('index') }}">Назад к списку шпаргалок</a>
+        </div>
+    </form>
+{% endblock %}
+

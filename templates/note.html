@@ -6,7 +6,8 @@
     <h3>{{ note.title }}</h3>
     <div class="content-box">
         {{ markdown_content|safe }}
-        <a href="{{ url_for('index') }}">Назад к списку шпаргалок</a>
+        <a href="{{ url_for('index') }}">Назад к списку шпаргалок</a> | 
+        <a href="{{ url_for('edit_note', note_id=note.id) }}">Редактировать</a>
     </div>
 </div>
 {% endblock %}
