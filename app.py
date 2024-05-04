@@ -76,5 +76,14 @@ def edit_note(note_id):
     return render_template('edit_note.html', note=note)
 
 
+@app.route('/delete/<int:note_id>')
+def delete_note(note_id):
+    note = session.query(Note).get(note_id)
+    if note is not None:
+        session.delete(note)
+        session.commit()
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)

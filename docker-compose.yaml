@@ -3,14 +3,15 @@ services:
     image: postgres:14.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - ${db_port}:5432
     environment:
       POSTGRES_USER: ${db_username}
       POSTGRES_PASSWORD: ${db_pass}
       POSTGRES_DB: ${db_name}
 
   web:
-    build: ./
-    command: gunicorn -b :5000 app:app
+    image: ssuhotskiy/cheat_sheets:v1.1
     restart: always
     depends_on:
       - db

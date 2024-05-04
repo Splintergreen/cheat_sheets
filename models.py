@@ -10,10 +10,11 @@ db_name = os.getenv('db_name')
 db_username = os.getenv('db_username')
 db_pass = os.getenv('db_pass')
 db_host = os.getenv('db_host')
+db_port = os.getenv('db_port')
 
 
 engine = create_engine(
-    f'postgresql+psycopg2://{db_username}:{db_pass}@{db_host}/{db_name}'
+    f'postgresql+psycopg2://{db_username}:{db_pass}@{db_host}:{db_port}/{db_name}'
     )
 Base = declarative_base()
 
